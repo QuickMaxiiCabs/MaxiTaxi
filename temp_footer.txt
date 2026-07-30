@@ -1,0 +1,6 @@
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@0.3.28/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

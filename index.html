@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Maxii Cabs Melbourne | 24/7 Maxi Taxi & NDIS Transport</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #05040b;
+      --bg-panel: rgba(255, 255, 255, 0.05);
+      --bg-card: rgba(255, 255, 255, 0.05);
+      --bg-card-hover: rgba(252, 163, 17, 0.12);
+      --primary: #f9b233;
+      --primary-hover: #ffcb5c;
+      --text-main: #f8f8ff;
+      --text-muted: #b0b7c6;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --font-main: 'Montserrat', sans-serif;
+      --transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-main);
+      color: var(--text-main);
+      background: radial-gradient(circle at top left, rgba(249, 178, 51, 0.12), transparent 22%),
+                  radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.05), transparent 14%),
+                  linear-gradient(180deg, #05040b 0%, #09090f 100%);
+      overflow-x: hidden;
+      padding-top: 90px;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 3rem));
+      margin: 0 auto;
+    }
+
+    .text-orange { color: var(--primary); }
+
+    h1, h2, h3 { font-weight: 900; letter-spacing: -0.05em; text-transform: uppercase; line-height: 1.05; color: #fff; }
+    .section-subtitle { color: var(--primary); font-size: 0.82rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 1rem; }
+    p { color: var(--text-muted); font-size: 1.05rem; }
+    small { color: var(--text-muted); }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.9rem 1.8rem; border-radius: 999px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; cursor: pointer; transition: var(--transition); border: none; font-size: 0.95rem; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-hover)); color: #07070b; box-shadow: 0 18px 40px rgba(249, 178, 51, 0.24); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 24px 46px rgba(249, 178, 51, 0.3); }
+    .btn-outline { background: rgba(255,255,255,0.04); color: #fff; border: 2px solid rgba(255,255,255,0.14); }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+    .btn-lg { padding: 1.1rem 2rem; font-size: 1rem; }
+    .btn-full { width: 100%; }
+
+    .site-header { position: fixed; top: 0; left: 0; right: 0; background: rgba(5, 4, 11, 0.85); backdrop-filter: blur(18px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+    .logo-icon { font-size: 2rem; color: var(--primary); }
+    .brand-text { font-weight: 900; font-size: 1.1rem; line-height: 1; letter-spacing: 1px; display: flex; flex-direction: column; }
+    .brand-text span { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; letter-spacing: 1.5px; }
+
+    .primary-navigation { display: flex; gap: 2rem; }
+    .primary-navigation a { color: var(--text-muted); text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: var(--transition); }
+    .primary-navigation a:hover { color: var(--primary); }
+
+    .header-actions { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-phone { color: var(--primary); font-weight: 800; text-decoration: none; font-size: 1.05rem; }
+
+    .section { padding: 6rem 0; }
+    .section-header { margin-bottom: 3rem; max-width: 640px; }
+    .section-header h2 { font-size: clamp(2.5rem, 4.5vw, 3.8rem); margin-bottom: 1.2rem; }
+    .text-center { text-align: center; margin: 0 auto 4rem auto; }
+
+    .hero { min-height: calc(100vh - 90px); display: grid; align-items: center; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+    .small-section { padding: 3rem 0; }
+    .small-section h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .small-section p { max-width: 720px; color: #d2d6e0; }
+    .policy-block { margin-bottom: 1.75rem; }
+    .policy-block h3 { font-size: 1.1rem; margin-bottom: 0.75rem; color: #fff; }
+    .policy-block p { font-size: 0.98rem; line-height: 1.8; }
+    .tag-badge { background: rgba(249, 178, 51, 0.12); border: 1px solid rgba(249, 178, 51, 0.35); color: var(--primary); font-size: 0.78rem; font-weight: 800; padding: 0.55rem 1.1rem; border-radius: 999px; display: inline-block; margin-bottom: 1.5rem; letter-spacing: 1px; }
+    .hero h1 { font-size: clamp(3rem, 6vw, 5.4rem); margin-bottom: 1.5rem; line-height: 0.95; }
+    .hero p { margin-bottom: 2rem; max-width: 90%; color: #c2c6d4; font-size: 1.05rem; }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-image { position: relative; height: 560px; border-radius: 32px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); transform-style: preserve-3d; transition: transform 0.2s ease; }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.05) brightness(0.96); transition: transform 0.6s ease, filter 0.4s ease; }
+    .quote-form {
+      padding: 2rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+    }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+    .quote-form .input-group label { color: var(--text-muted); font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 0.5rem; display: block; }
+    .quote-form input, .quote-form select, .quote-form textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 1rem; border-radius: 16px; color: #fff; font-family: inherit; font-size: 1rem; transition: var(--transition); }
+    .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 1px rgba(249,178,51,0.3); }
+    .quote-form .btn { width: 100%; }
+    .time-picker-group .time-wheel {
+      position: relative;
+      height: 190px;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      background: rgba(255,255,255,0.04);
+      box-shadow: inset 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .time-wheel-track {
+      padding: 1.5rem 0;
+      display: grid;
+      gap: 0.1rem;
+    }
+    .time-wheel-item {
+      scroll-snap-align: center;
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding: 0.85rem 1rem;
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.25s ease, transform 0.25s ease, font-size 0.25s ease;
+    }
+    .time-wheel-item.active {
+      color: #fff;
+      font-size: 1.05rem;
+      transform: scale(1.02);
+    }
+    .time-wheel-item:hover {
+      color: var(--primary);
+    }
+    .time-wheel::before,
+    .time-wheel::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 3rem;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(7,7,13,0.95), rgba(7,7,13,0));
+      z-index: 1;
+    }
+    .time-wheel::after {
+      top: auto;
+      bottom: 0;
+      background: linear-gradient(0deg, rgba(7,7,13,0.95), rgba(7,7,13,0));
+    }
+    .time-wheel:focus-visible {
+      outline: 2px solid rgba(249,178,51,0.65);
+      outline-offset: 4px;
+    }
+    .hero-image:hover img { transform: scale(1.02); }
+    .hero-image::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,4,11,0) 0%, rgba(5,4,11,0.55) 80%); pointer-events: none; }
+    .hero-image::after { content: ''; position: absolute; width: 260px; height: 260px; top: 12%; right: -6%; background: radial-gradient(circle, rgba(249,178,51,0.18), transparent 58%); pointer-events: none; }
+    .image-badge { position: absolute; bottom: 2rem; left: 2rem; background: rgba(10, 10, 18, 0.88); backdrop-filter: blur(18px); padding: 1rem 1.5rem; border-radius: 16px; display: flex; align-items: center; gap: 1rem; border: 1px solid rgba(255,255,255,0.12); }
+    .image-badge .icon { background: var(--primary); color: #07070b; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.3rem; }
+    .image-badge strong { display: block; font-size: 0.95rem; color: #fff; }
+    .image-badge span { font-size: 0.82rem; color: var(--text-muted); }
+
+    .trust-banner { padding: 4rem 0 3rem; }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 1.5rem; }
+    .trust-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 2rem 1.75rem; box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
+    .trust-item h2 { font-size: 3rem; margin-bottom: 0.75rem; }
+    .trust-item p { color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; }
+    .trust-ndis { background: rgba(22, 163, 74, 0.08); border-color: rgba(22, 163, 74, 0.35); box-shadow: 0 0 30px rgba(22, 163, 74, 0.18); }
+    .trust-ndis .ndis-text { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; margin: 0 auto 1rem; padding: 0.9rem 1.4rem; border-radius: 999px; background: rgba(22, 163, 74, 0.18); border: 1px solid rgba(22, 163, 74, 0.4); }
+    .trust-ndis .ndis-text p { margin: 0; font-weight: 700; color: #fff; font-size: 0.95rem; }
+    .blink-light { width: 2.2rem; height: 2.2rem; min-width: 2.2rem; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: linear-gradient(135deg, #16a34a, #22c55e); box-shadow: 0 0 18px rgba(22, 163, 74, 0.95), inset 0 0 6px rgba(255,255,255,0.35); animation: blink 1.5s infinite ease-in-out; position: relative; }
+    .ndis-logo { color: #fff; font-size: 0.62rem; font-weight: 900; letter-spacing: 0.08em; line-height: 1; text-transform: uppercase; }
+    @keyframes blink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.75; transform: scale(1.08); } }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .gallery-item { overflow: hidden; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 20px 50px rgba(0,0,0,0.18); background: rgba(255,255,255,0.03); transition: transform 0.35s ease, border-color 0.35s ease; }
+    .gallery-item:hover { transform: translateY(-5px); border-color: rgba(249,178,51,0.35); }
+    .gallery-item img { width: 100%; height: 260px; object-fit: cover; display: block; filter: contrast(1.05) saturate(1.1); transition: transform 0.45s ease, filter 0.4s ease; }
+    .gallery-item:hover img { transform: scale(1.05); filter: contrast(1.08) saturate(1.15); }
+    .gallery-item, .hero-image { position: relative; overflow: hidden; }
+    .image-credit {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      color: rgba(255,255,255,0.82);
+      background: rgba(9, 10, 22, 0.7);
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(10px);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .reviews-section { padding-top: 1rem; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .review-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 2rem; box-shadow: 0 25px 70px rgba(0,0,0,0.18); transition: transform 0.3s ease, border-color 0.3s ease; }
+    .review-card:hover { transform: translateY(-4px); border-color: rgba(249,178,51,0.35); }
+    .review-card h3 { font-size: 1rem; margin-bottom: 1rem; color: #fff; }
+    .review-card p { color: #d4d7e0; font-size: 0.95rem; line-height: 1.75; }
+    .more-reviews.hidden { display: none; }
+    .reviews-action { margin-top: 2rem; text-align: center; }
+    .reviews-action .btn { width: auto; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .service-card { background: var(--bg-card); padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); transition: var(--transition); box-shadow: 0 20px 45px rgba(0,0,0,0.22); }
+    .service-card:hover { transform: translateY(-6px); border-color: rgba(249,178,51,0.35); background: rgba(255,255,255,0.06); }
+    .service-card .icon-box { background: rgba(255,255,255,0.05); width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 18px; font-size: 1.8rem; margin-bottom: 1.5rem; transition: var(--transition); }
+    .service-card:hover .icon-box { background: var(--primary); color: #07070b; }
+    .service-card h3 { font-size: 1.45rem; margin-bottom: 1rem; }
+    .service-card p { font-size: 0.98rem; line-height: 1.75; }
+
+    .areas-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .area-pill { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1rem 1.5rem; border-radius: 16px; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.75rem; color: #fff; transition: var(--transition); }
+    .area-pill:hover { border-color: rgba(249,178,51,0.38); transform: translateY(-3px); background: rgba(252,163,17,0.08); }
+    .pin { color: #fbbf24; }
+
+    .booking-section { border-top: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(7, 7, 13, 0.96) 0%, #07070e 100%); }
+    .booking-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; }
+    .booking-form-col { padding: 1rem; }
+    .dark-form, .quote-form { display: grid; gap: 1.5rem; padding: 2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.22); }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+    .input-group label { display: block; font-size: 0.75rem; font-weight: 800; color: var(--text-muted); margin-bottom: 0.5rem; letter-spacing: 1px; }
+    .dark-form input, .dark-form select, .dark-form textarea { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 1rem; border-radius: 16px; color: #fff; font-family: inherit; font-size: 1rem; transition: var(--transition); }
+    .dark-form input:focus, .dark-form select:focus, .dark-form textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 1px rgba(249,178,51,0.3); }
+    .full-width { grid-column: 1 / -1; }
+
+    .site-footer { background: #04040c; color: #d8dce1; padding: 2.5rem 0; }
+    .footer-inner { display: grid; gap: 1rem; text-align: center; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+    .footer-links a { color: #f8fafc; text-decoration: none; font-weight: 700; transition: color 0.25s ease; }
+    .footer-links a:hover { color: var(--primary); }
+    .footer-copy p { margin: 0.35rem 0; color: #b8bcc9; }
+
+    .custom-cursor-enabled { cursor: none; }
+    .custom-cursor-dot,
+    .custom-cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      transform: translate3d(-50%, -50%, 0);
+      z-index: 9999;
+      mix-blend-mode: normal;
+    }
+    .custom-cursor-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(249,178,51,0.9) 45%, rgba(249,178,51,0.6) 75%);
+      box-shadow: 0 0 14px rgba(249,178,51,0.28), inset 0 0 0 1px rgba(255,255,255,0.2);
+      transform: translate3d(-50%, -50%, 0) scale(1);
+      transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+      will-change: transform, box-shadow;
+    }
+    .custom-cursor-ring {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid rgba(249,178,51,0.55);
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 0 0 2px rgba(249,178,51,0.12);
+      backdrop-filter: blur(8px);
+      opacity: 0.9;
+      transform: translate3d(-50%, -50%, 0) scale(1);
+      transition: transform 0.16s ease, opacity 0.16s ease, border-color 0.16s ease;
+      will-change: transform, opacity;
+    }
+    .custom-cursor-dot.cursor-active {
+      transform: translate3d(-50%, -50%, 0) scale(1.7);
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,1), rgba(249,178,51,0.95) 40%, rgba(249,178,51,0.7) 80%);
+      box-shadow: 0 0 20px rgba(249,178,51,0.45), inset 0 0 0 1px rgba(255,255,255,0.3);
+    }
+    .custom-cursor-ring.cursor-active {
+      opacity: 1;
+      transform: translate3d(-50%, -50%, 0) scale(1.5);
+      border-color: rgba(255,255,255,0.85);
+    }
+
+    .custom-cursor-ring.cursor-active::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 1px solid rgba(249,178,51,0.18);
+      opacity: 0.8;
+    }
+
+    .reveal { opacity: 0; transform: translateY(30px) scale(0.98); }
+
+    @media (hover: none), (pointer: coarse) {
+      .custom-cursor-dot,
+      .custom-cursor-ring {
+        display: none;
+      }
+      .custom-cursor-enabled { cursor: auto; }
+    }
+
+    @media (max-width: 1060px) {
+      .hero-grid, .services-grid, .trust-grid, .booking-grid { grid-template-columns: 1fr; }
+      .hero { min-height: auto; padding-top: 6rem; }
+      .hero-image { height: 420px; }
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .trust-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .primary-navigation { display: none; }
+      .header-inner { gap: 1rem; }
+      .hero { padding-top: 4rem; }
+      .hero h1 { font-size: 3rem; }
+      .hero-buttons { flex-direction: column; align-items: stretch; }
+      .hero-image { height: 320px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .booking-grid { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand">
+        <div class="logo-icon">🚕</div>
+        <div class="brand-text">
+          QUICK MAXI CABS
+          <span>MELBOURNE</span>
+        </div>
+      </a>
+      <nav class="primary-navigation">
+        <a href="#services">Services</a>
+        <a href="#areas">Areas</a>
+        <a href="#booking">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="nav-phone" href="tel:+61491727278">📞 0491 727 278</a>
+        <a class="btn btn-primary" href="#booking">Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="tag-badge">📍 MELBOURNE'S #1 MAXI & NDIS TRANSPORT</span>
+          <h1>Melbourne's<br><span class="text-orange">Most Trusted</span><br>Maxi Transport<br>Service</h1>
+          <p>Wheelchair accessible, NDIS-registered, airport transfers & group travel — available 24/7 across all Melbourne suburbs. Professional, punctual, affordable.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary btn-lg" href="#booking">📅 Book a Ride</a>
+            <a class="btn btn-outline btn-lg" href="tel:+61491727278">📞 Call Now</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="VeniceAI_sGTdqYVWeg5wD__1.jpeg" alt="Quick Maxii Cabs vehicle exterior">
+          <span class="image-credit">© Quick Maxii Cabs</span>
+          <div class="image-badge">
+            <span class="icon">♿</span>
+            <div>
+              <strong>Wheelchair Accessible</strong>
+              <span>Ramps & lifts available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-banner">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <h2>24/7</h2>
+          <p>Always Available</p>
+        </div>
+        <div class="trust-item">
+          <h2>4.9★</h2>
+          <p>Google Rating</p>
+        </div>
+        <div class="trust-item trust-ndis">
+          <div class="ndis-text">
+            <span class="blink-light"><span class="ndis-logo">NDIS</span></span>
+            <p>NDIS Approved Transport Provider</p>
+          </div>
+          <h2>NDIS</h2>
+          <p>Registered Provider</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section reviews-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">— REVIEWS</span>
+          <h2>Trusted by <span class="text-orange">Melbourne</span> Riders</h2>
+          <p>Real feedback from customers who rely on our accessible and airport transport services.</p>
+        </div>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <h3>5-star service — Sam R.</h3>
+            <p>"Effortless booking and the driver was incredible with my mum's wheelchair. On time, professional and so helpful."</p>
+          </article>
+          <article class="review-card">
+            <h3>Reliable transfer — Jessica M.</h3>
+            <p>"Booked an airport transfer and the maxi cab arrived early. Great communication and really smooth ride."</p>
+          </article>
+          <article class="review-card">
+            <h3>NDIS support — Mark P.</h3>
+            <p>"The team understood our needs, the vehicle was spacious and the driver was patient throughout the trip."</p>
+          </article>
+          <div id="extraReviews" class="more-reviews hidden">
+            <article class="review-card">
+              <h3>Comfortable taxi — Emily C.</h3>
+              <p>"Perfect for our group journey. The cab was clean, roomy and the driver helped with luggage too."</p>
+            </article>
+            <article class="review-card">
+              <h3>Great for disability transport — Aaron T.</h3>
+              <p>"The wheelchair ramp was fast and easy. We felt safe and valued from pick-up to drop-off."</p>
+            </article>
+            <article class="review-card">
+              <h3>Very responsive — Lisa W.</h3>
+              <p>"Quick replies, clear pricing and a stress-free ride across Melbourne. Highly recommend."</p>
+            </article>
+          </div>
+        </div>
+        <div class="reviews-action">
+          <button id="reviewsToggle" class="btn btn-outline" aria-controls="extraReviews" aria-expanded="false">Show more reviews</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">— FLEET PHOTOS</span>
+          <h2>Real <span class="text-orange">Maxi Cab</span> Vehicles</h2>
+          <p>See our fleet in action with local images of our vehicles and accessibility-ready transport.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="VeniceAI_sGTdqYVWeg5wD__1.jpeg" alt="Quick Maxii Cabs wheelchair accessibility">
+            <span class="image-credit">© Quick Maxii Cabs</span>
+          </div>
+          <div class="gallery-item">
+            <img src="VeniceAI_sGTdqYVWeg5wD__2.jpeg" alt="Quick Maxii Cabs interior seating">
+            <span class="image-credit">© Quick Maxii Cabs</span>
+          </div>
+          <div class="gallery-item">
+            <img src="VeniceAI_sGTdqYVWeg5wD__3.jpeg" alt="Quick Maxii Cabs airport transfer service">
+            <span class="image-credit">© Quick Maxii Cabs</span>
+          </div>
+          <div class="gallery-item">
+            <img src="VeniceAI_uBcGUSHrJQdpKr_0.jpeg" alt="Quick Maxii Cabs Melbourne vehicle">
+            <span class="image-credit">© Quick Maxii Cabs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">— WHAT WE OFFER</span>
+          <h2>Our <span class="text-orange">Services</span></h2>
+          <p>From airport transfers to NDIS disability transport — we've got every journey covered in Melbourne.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="icon-box">♿</div>
+            <h3>Wheelchair Taxi Melbourne</h3>
+            <p>Fully equipped wheelchair accessible vehicles with ramps and hydraulic lifts for passengers with mobility needs.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon-box">🏥</div>
+            <h3>NDIS Transport</h3>
+            <p>Registered NDIS provider offering reliable transport support for participants with plan and self-managed funding.</p>
+          </div>
+          <div class="service-card">
+            <div class="icon-box">✈️</div>
+            <h3>Airport Transfers</h3>
+            <p>Reliable, punctual pick-ups and drop-offs at Tullamarine & Avalon Airports with flight tracking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">— COVERAGE</span>
+          <h2>Areas We <span class="text-orange">Serve</span></h2>
+          <p>Serving all Melbourne suburbs and surrounds.</p>
+        </div>
+        <div class="areas-grid">
+          <div class="area-pill"><span class="pin">📍</span> Melbourne CBD</div>
+          <div class="area-pill"><span class="pin">📍</span> Prahran</div>
+          <div class="area-pill"><span class="pin">📍</span> St Kilda</div>
+          <div class="area-pill"><span class="pin">📍</span> Flemington</div>
+          <div class="area-pill"><span class="pin">📍</span> North Melbourne</div>
+          <div class="area-pill"><span class="pin">📍</span> Essendon</div>
+          <div class="area-pill"><span class="pin">📍</span> Footscray</div>
+          <div class="area-pill"><span class="pin">📍</span> Williamstown</div>
+          <div class="area-pill"><span class="pin">📍</span> Altona</div>
+          <div class="area-pill"><span class="pin">📍</span> Sunshine</div>
+          <div class="area-pill"><span class="pin">📍</span> Werribee</div>
+          <div class="area-pill"><span class="pin">📍</span> Geelong</div>
+          <div class="area-pill"><span class="pin">📍</span> Glen Waverley</div>
+          <div class="area-pill"><span class="pin">📍</span> Box Hill</div>
+          <div class="area-pill"><span class="pin">📍</span> Doncaster</div>
+          <div class="area-pill"><span class="pin">📍</span> Preston</div>
+          <div class="area-pill"><span class="pin">📍</span> Northcote</div>
+          <div class="area-pill"><span class="pin">📍</span> Collingwood</div>
+          <div class="area-pill"><span class="pin">📍</span> Hawthorn</div>
+          <div class="area-pill"><span class="pin">📍</span> Camberwell</div>
+          <div class="area-pill"><span class="pin">📍</span> Malvern</div>
+          <div class="area-pill"><span class="pin">📍</span> Ballarat</div>
+          <div class="area-pill"><span class="pin">📍</span> Sunbury</div>
+          <div class="area-pill"><span class="pin">📍</span> Craigieburn</div>
+          <div class="area-pill"><span class="pin">📍</span> Epping</div>
+          <div class="area-pill"><span class="pin">📍</span> Mernda</div>
+          <div class="area-pill"><span class="pin">📍</span> Box Hill</div>
+          <div class="area-pill"><span class="pin">📍</span> Chadstone</div>
+          <div class="area-pill"><span class="pin">📍</span> Burwood</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="section booking-section">
+      <div class="container booking-grid">
+        <div class="booking-form-col">
+          <span class="section-subtitle">— BOOK ONLINE</span>
+          <h2>Request a <span class="text-orange">Free Quote</span></h2>
+          <form action="https://api.web3forms.com/submit" method="POST" class="quote-form dark-form">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="c9bfc3fd-ede5-4145-af2b-0ddf5c716ee1">
+            <input type="hidden" name="subject" value="New Booking Request from Quick Maxi Cabs">
+
+            <div class="form-grid">
+              <div class="input-group">
+                <label>YOUR NAME</label>
+                <input type="text" name="name" placeholder="Your Full Name" required>
+              </div>
+
+              <div class="input-group">
+                <label>EMAIL ADDRESS</label>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+              </div>
+
+              <div class="input-group">
+                <label>PICK-UP ADDRESS</label>
+                <input type="text" name="pickup" placeholder="Enter pick-up address" required>
+              </div>
+
+              <div class="input-group">
+                <label>DROP-OFF ADDRESS</label>
+                <input type="text" name="dropoff" placeholder="Enter drop-off address" required>
+              </div>
+
+              <div class="input-group">
+                <label>NUMBER OF PASSENGERS</label>
+                <select name="passengers" required>
+                  <option value="" disabled selected>How many passengers?</option>
+                  <option value="1">1 passenger</option>
+                  <option value="2">2 passengers</option>
+                  <option value="3">3 passengers</option>
+                  <option value="4">4 passengers</option>
+                  <option value="5">5 passengers</option>
+                  <option value="6">6 passengers</option>
+                  <option value="7">7 passengers</option>
+                  <option value="8+">8+ passengers</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label>DATE</label>
+                <input type="date" name="booking_date" required>
+              </div>
+
+              <div class="input-group time-picker-group">
+                <label>TIME</label>
+                <input type="hidden" name="booking_time" id="booking-time" value="08:00">
+                <div id="timeWheel" class="time-wheel" tabindex="0" aria-label="Select pickup time">
+                  <div class="time-wheel-track">
+                    <button type="button" class="time-wheel-item active" data-value="08:00">08:00 AM</button>
+                    <button type="button" class="time-wheel-item" data-value="08:30">08:30 AM</button>
+                    <button type="button" class="time-wheel-item" data-value="09:00">09:00 AM</button>
+                    <button type="button" class="time-wheel-item" data-value="09:30">09:30 AM</button>
+                    <button type="button" class="time-wheel-item" data-value="10:00">10:00 AM</button>
+                    <button type="button" class="time-wheel-item" data-value="10:30">10:30 AM</button>
+                    <button type="button" class="time-wheel-item" data-value="11:00">11:00 AM</button>
+                    <button type="button" class="time-wheel-item" data-value="11:30">11:30 AM</button>
+                    <button type="button" class="time-wheel-item" data-value="12:00">12:00 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="12:30">12:30 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="13:00">01:00 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="13:30">01:30 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="14:00">02:00 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="14:30">02:30 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="15:00">03:00 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="15:30">03:30 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="16:00">04:00 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="16:30">04:30 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="17:00">05:00 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="17:30">05:30 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="18:00">06:00 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="18:30">06:30 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="19:00">07:00 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="19:30">07:30 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="20:00">08:00 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="20:30">08:30 PM</button>
+                    <button type="button" class="time-wheel-item" data-value="21:00">09:00 PM</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-group time-picker-group">
+                <label>AM / PM</label>
+                <input type="hidden" name="booking_period" id="booking-period" value="AM">
+                <div id="periodWheel" class="time-wheel" tabindex="0" aria-label="Select AM or PM">
+                  <div class="time-wheel-track">
+                    <button type="button" class="time-wheel-item active" data-value="AM">AM</button>
+                    <button type="button" class="time-wheel-item" data-value="PM">PM</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label>TYPE OF TAXI</label>
+                <select name="taxi_type" required>
+                  <option value="" disabled selected>Select taxi type</option>
+                  <option value="Maxi">Maxi</option>
+                  <option value="Maxi Taxi">Maxi Taxi</option>
+                  <option value="Sedan">Sedan</option>
+                  <option value="Wagon">Wagon</option>
+                  <option value="Wheelchair Taxi">Wheelchair Taxi</option>
+                  <option value="NDIS Transport">NDIS Transport</option>
+                  <option value="Airport Transfer">Airport Transfer</option>
+                  <option value="Group Transport">Group Transport</option>
+                  <option value="Wedding Transfer">Wedding Transfer</option>
+                  <option value="Baby Seat Service">Baby Seat Service</option>
+                </select>
+              </div>
+
+              <div class="input-group full-width">
+                <label>BOOKING DETAILS</label>
+                <textarea name="message" rows="6" placeholder="Enter pickup location, drop-off, and any special requests..." required></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 2rem; width: 100%;">Book Now</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms & Conditions</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copy">
+        <p>© 2026 Quick Maxii Cabs Melbourne. All rights reserved.</p>
+        <p>We are NDIS-approved and committed to safe, respectful transport service across Victoria.</p>
+      </div>
+    </div>
+  </footer>
+
+  <section id="privacy" class="section small-section">
+    <div class="container">
+      <h2>Privacy Policy</h2>
+      <p>We respect your personal information and only use it to provide transport booking services. Data is not shared with third parties except as required to fulfill booking requests and communications.</p>
+    </div>
+  </section>
+
+  <section id="terms" class="section small-section">
+    <div class="container">
+      <h2>Terms & Conditions</h2>
+      <div class="policy-block">
+        <h3>Core Service & Booking Policies</h3>
+        <p>Quick Maxii Cabs provides accessible maxi taxi and NDIS transport services across Melbourne. All bookings are subject to availability, completion of accurate trip details, and adherence to our vehicle capacity and passenger support requirements.</p>
+      </div>
+      <div class="policy-block">
+        <h3>Safety & Equipment Standards</h3>
+        <p>Our fleet is maintained to high safety standards and equipped for wheelchair access where required. Drivers are trained in handling mobility equipment and passenger care, and all trips follow strict vehicle hygiene and safety checks.</p>
+      </div>
+      <div class="policy-block">
+        <h3>Financials & Subsidies</h3>
+        <p>Pricing is provided at the time of booking and may be adjusted for distance, vehicle type, and special assistance needs. NDIS participants should confirm subsidy eligibility and funding arrangements before travel; any payment gap is the passenger’s responsibility.</p>
+      </div>
+      <div class="policy-block">
+        <h3>Liability & Limitation of Liability</h3>
+        <p>Quick Maxii Cabs is liable for service delivery within the scope of the booking agreement and applicable law. We are not responsible for indirect losses, delays caused by third-party traffic conditions, or failure to provide service due to force majeure events.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section small-section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Call us at <a href="tel:+61491727278">0491 727 278</a> or email <a href="mailto:wamaxicab@gmail.com">wamaxicab@gmail.com</a> for questions or urgent bookings.</p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@0.3.28/dist/lenis.min.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.15/index.min.js"></script>
+  <gmpx-api-loader key="INSERT_YOUR_API_KEY" solution-channel="GMP_CCS_autocomplete_v5"></gmpx-api-loader>
+  <script src="script.js"></script>
+</body>
+</html>
